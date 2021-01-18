@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.app4mc.sca2amalthea.ir;singleton:=true
+Bundle-Version: 0.9.8.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: Eclipse.org
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.eclipse.app4mc.sca2amalthea.ir.scair,
+ org.eclipse.app4mc.sca2amalthea.ir.scair.impl,
+ org.eclipse.app4mc.sca2amalthea.ir.scair.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Automatic-Module-Name: org.eclipse.app4mc.sca2amalthea.ir

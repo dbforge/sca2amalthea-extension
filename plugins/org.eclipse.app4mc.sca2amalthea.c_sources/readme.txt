@@ -1,0 +1,1 @@
+for compiling c code please read the instruction in "org.eclipse.app4mc.sca2amalthea.docu" plugin in sca2amalthea_setup.pptx 

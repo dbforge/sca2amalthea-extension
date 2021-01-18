@@ -1,0 +1,7 @@
+#Task Type,Task/ISR Name,Task Cycle
+SOFTWARE,OS_Example2_Task,NONE
+ISR,OS_Example3_SRM_ISR,
+SOFTWARE,OS_Example4_Clear_Task,NONE
+ISR,OS_Example5_SR1_ISR,
+ISR,OS_Example6_SR2_ISR,
+SOFTWARE,OS_Example1_End_Task,ONCE

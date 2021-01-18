@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.app4mc.sca2amalthea.ir/src" modelPluginID="org.eclipse.app4mc.sca2amalthea.ir"
+    modelName="scair" editPluginClass="org.eclipse.app4mc.sca2amalthea.ir.scair.provider.scairEditPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="org.eclipse.app4mc.sca2amalthea.ir.edit"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>scair.ecore</foreignModel>
+  <genPackages prefix="scair" basePackage="org.eclipse.app4mc.sca2amalthea.ir" disposableProviderFactory="true"
+      ecorePackage="scair.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="scair.ecore#//EFunctionTypeEnum">
+      <genEnumLiterals ecoreEnumLiteral="scair.ecore#//EFunctionTypeEnum/Runnable"/>
+      <genEnumLiterals ecoreEnumLiteral="scair.ecore#//EFunctionTypeEnum/Task"/>
+      <genEnumLiterals ecoreEnumLiteral="scair.ecore#//EFunctionTypeEnum/ISR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="scair.ecore#//AccessTypeEnum">
+      <genEnumLiterals ecoreEnumLiteral="scair.ecore#//AccessTypeEnum/Read"/>
+      <genEnumLiterals ecoreEnumLiteral="scair.ecore#//AccessTypeEnum/Write"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="scair.ecore#//ETypeCategory">
+      <genEnumLiterals ecoreEnumLiteral="scair.ecore#//ETypeCategory/PRIMITIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="scair.ecore#//ETypeCategory/POINTER"/>
+      <genEnumLiterals ecoreEnumLiteral="scair.ecore#//ETypeCategory/ARRAY"/>
+      <genEnumLiterals ecoreEnumLiteral="scair.ecore#//ETypeCategory/STRUCT"/>
+    </genEnums>
+    <genClasses ecoreClass="scair.ecore#//Function">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scair.ecore#//Function/stmtseq"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//Function/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference scair.ecore#//Function/container"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//Function/srcline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//Function/srccol"/>
+    </genClasses>
+    <genClasses ecoreClass="scair.ecore#//Label">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//Label/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//Label/cat"/>
+    </genClasses>
+    <genClasses ecoreClass="scair.ecore#//CallGraph"/>
+    <genClasses ecoreClass="scair.ecore#//Container">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//Container/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//Container/location"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EReference scair.ecore#//Container/functions"/>
+    </genClasses>
+    <genClasses ecoreClass="scair.ecore#//Project">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scair.ecore#//Project/containers"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scair.ecore#//Project/callgraph"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scair.ecore#//Project/labels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scair.ecore#//Project/typedefs"/>
+    </genClasses>
+    <genClasses ecoreClass="scair.ecore#//LabelAccess">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//LabelAccess/Access"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scair.ecore#//LabelAccess/label"/>
+    </genClasses>
+    <genClasses ecoreClass="scair.ecore#//TypeDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//TypeDef/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//TypeDef/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//TypeDef/cat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scair.ecore#//TypeDef/members"/>
+    </genClasses>
+    <genClasses ecoreClass="scair.ecore#//TypeDefMember">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//TypeDefMember/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//TypeDefMember/cat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//TypeDefMember/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="scair.ecore#//StmtCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//StmtCall/srcline"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//StmtCall/srccol"/>
+    </genClasses>
+    <genClasses ecoreClass="scair.ecore#//FunctionCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference scair.ecore#//FunctionCall/calls"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="scair.ecore#//IIdentifiable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//IIdentifiable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//IIdentifiable/uniqueName"/>
+      <genOperations ecoreOperation="scair.ecore#//IIdentifiable/computeUniqueName"
+          body="&#xD;&#xA;&#x9;&#x9;String _name = this.getName();&#xD;&#xA;&#x9;&#x9;String _encode = this.encode(_name);&#xD;&#xA;&#x9;&#x9;String _plus = (_encode + &quot;?type=&quot;);&#xD;&#xA;&#x9;&#x9;EClass _eClass = this.eClass();&#xD;&#xA;&#x9;&#x9;String _name_1 = _eClass.getName();&#xD;&#xA;&#x9;&#x9;return (_plus + _name_1);&#xD;&#xA;"/>
+      <genOperations ecoreOperation="scair.ecore#//IIdentifiable/encode" body="&#xD;&#xA;&#x9;&#x9;&#x9;String expr= null;&#xD;&#xA;&#x9;&#x9;&#x9;boolean _isNullOrEmpty = (str == null || str.length() == 0);&#xD;&#xA;&#x9;&#x9;&#x9;if (_isNullOrEmpty) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;expr = &quot;no-name-id&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;else {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;String _string = StandardCharsets.UTF_8.toString();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;try {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;expr = URLEncoder.encode(str, _string);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;catch (UnsupportedEncodingException e) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// TODO Auto-generated catch block&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;e.printStackTrace();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;return expr;&#xD;&#xA;&#x9;&#x9;">
+        <genParameters ecoreParameter="scair.ecore#//IIdentifiable/encode/str"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="scair.ecore#//IdentifiableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//IdentifiableElement/File"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute scair.ecore#//IdentifiableElement/Package"/>
+    </genClasses>
+    <genClasses ecoreClass="scair.ecore#//ModeEntry">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scair.ecore#//ModeEntry/stmtseq"/>
+    </genClasses>
+    <genClasses ecoreClass="scair.ecore#//ModeSwitch">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference scair.ecore#//ModeSwitch/modeentry"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

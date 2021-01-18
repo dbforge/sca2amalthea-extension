@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:SCA Tools?after=additions">
+         <command
+               commandId="org.eclipse.app4mc.sca2amalthea.ui.command"
+               icon="icons/sca2amalthea.png"
+               label="Generate AMALTHEA (from Source Code)"
+               style="push"
+               tooltip="c sources to Amalthea">
+            <visibleWhen>
+               <or>
+                  <with
+                        variable="activePartId">
+                     <or>
+                        <equals
+                              value="org.eclipse.ui.navigator.ProjectExplorer">
+                        </equals>
+                        <equals
+                              value="org.itea2.amalthea.platform.ide.views.modelExplorer">
+                        </equals>
+                     </or>
+                  </with>
+                  <iterate>
+                     <or>
+                     <instanceof
+                           value="org.eclipse.core.resources.IProject">
+                     </instanceof>
+                     </or>
+                  </iterate>
+               </or>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="org.eclipse.app4mc.sca2amalthea.ui.command"
+            name="Generate Amalthea">
+      </command>
+   </extension>
+  <extension
+  point="org.eclipse.ui.handlers">
+   <handler
+            class="org.eclipse.app4mc.sca2amalthea.ui.handlers.SCAToAmaltheaHandler"
+            commandId="org.eclipse.app4mc.sca2amalthea.ui.command">
+         <activeWhen>
+               <with
+                     variable="selection">
+                  <count
+                        value="1">
+                  </count>
+                  <iterate>
+                     <instanceof
+                           value="org.eclipse.core.resources.IProject">
+                     </instanceof>
+                  </iterate>
+               </with>
+         </activeWhen>
+      </handler>
+       </extension>
+</plugin>

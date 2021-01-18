@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.eclipse.app4mc.sca2amalthea.feature">
+      <category name="SCA2AMALTHEA"/>
+   </feature>
+   <feature id="org.eclipse.app4mc.sca2amalthea.feature.sdk">
+      <category name="SCA2AMALTHEA"/>
+   </feature>
+   <category-def name="SCA2AMALTHEA" label="SCA2AMALTHEA"/>
+</site>

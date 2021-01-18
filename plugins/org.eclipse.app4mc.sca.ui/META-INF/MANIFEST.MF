@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SCA2AMALTHEA Ui
+Bundle-SymbolicName: org.eclipse.app4mc.sca.ui;singleton:=true
+Bundle-Version: 0.9.8.qualifier
+Bundle-Activator: org.eclipse.app4mc.sca.ui.Activator
+Bundle-Vendor: Eclipse.org
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface,
+ org.eclipse.swt,
+ org.eclipse.app4mc.sca.logging,
+ org.eclipse.app4mc.sca.util,
+ org.eclipse.core.resources,
+ org.eclipse.app4mc.amalthea.model
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.app4mc.sca.ui,
+ org.eclipse.app4mc.sca.ui.messagedialog,
+ org.eclipse.app4mc.sca.ui.util,
+ org.eclipse.app4mc.sca.ui.widget.builder,
+ org.eclipse.app4mc.sca.ui.widgets,
+ org.eclipse.app4mc.sca.ui.wizard
+Automatic-Module-Name: org.eclipse.app4mc.sca.ui

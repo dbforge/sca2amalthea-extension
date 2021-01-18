@@ -1,0 +1,15 @@
+org.eclipse.app4mc.sca.amalthea.loader
+org.eclipse.app4mc.sca.amalthea.model.utils
+org.eclipse.app4mc.sca.logging
+org.eclipse.app4mc.sca.scheduling.loader
+org.eclipse.app4mc.sca.ui
+org.eclipse.app4mc.sca.util
+org.eclipse.app4mc.sca2amalthea.docu
+org.eclipse.app4mc.sca2amalthea.exporter
+org.eclipse.app4mc.sca2amalthea.ir
+org.eclipse.app4mc.sca2amalthea.ir.loader
+org.eclipse.app4mc.sca2amalthea.llvm
+org.eclipse.app4mc.sca2amalthea.scairmodelenricher
+org.eclipse.app4mc.sca2amalthea.serialization
+org.eclipse.app4mc.sca2amalthea.ui
+org.eclipse.app4mc.sca2amalthea.utils

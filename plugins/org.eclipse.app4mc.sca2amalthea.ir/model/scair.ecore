@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="scair" nsURI="http://org.eclipse.app4mc.scair.core.model" nsPrefix="scair">
+  <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//IdentifiableElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stmtseq" upperBound="-1"
+        eType="#//StmtCall" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//EFunctionTypeEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//Container"
+        eOpposite="#//Container/functions"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srccol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Label" eSuperTypes="#//IdentifiableElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cat" lowerBound="1" eType="#//ETypeCategory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EFunctionTypeEnum">
+    <eLiterals name="Runnable"/>
+    <eLiterals name="Task" value="1"/>
+    <eLiterals name="ISR" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CallGraph"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functions" upperBound="-1"
+        eType="#//Function" containment="true" eOpposite="#//Function/container"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Project">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containers" upperBound="-1"
+        eType="#//Container" containment="true" eKeys="#//Container/name">
+      <eAnnotations>
+        <details key=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="callgraph" upperBound="-1"
+        eType="#//CallGraph"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"
+        eType="#//Label" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typedefs" upperBound="-1"
+        eType="#//TypeDef" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LabelAccess" eSuperTypes="#//StmtCall">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Access" eType="#//AccessTypeEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="label" lowerBound="1" eType="#//Label"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AccessTypeEnum">
+    <eLiterals name="Read" literal="Read"/>
+    <eLiterals name="Write" value="1" literal="Write"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeDef">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cat" lowerBound="1" eType="#//ETypeCategory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
+        eType="#//TypeDefMember" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeDefMember">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cat" lowerBound="1" eType="#//ETypeCategory"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ETypeCategory">
+    <eLiterals name="PRIMITIVE"/>
+    <eLiterals name="POINTER" value="1"/>
+    <eLiterals name="ARRAY" value="2"/>
+    <eLiterals name="STRUCT" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StmtCall" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srcline" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srccol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionCall" eSuperTypes="#//StmtCall">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calls" lowerBound="1" eType="#//Function"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IIdentifiable" abstract="true" interface="true">
+    <eOperations name="computeUniqueName" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#xD;&#xA;&#x9;&#x9;String _name = this.getName();&#xD;&#xA;&#x9;&#x9;String _encode = this.encode(_name);&#xD;&#xA;&#x9;&#x9;String _plus = (_encode + &quot;?type=&quot;);&#xD;&#xA;&#x9;&#x9;EClass _eClass = this.eClass();&#xD;&#xA;&#x9;&#x9;String _name_1 = _eClass.getName();&#xD;&#xA;&#x9;&#x9;return (_plus + _name_1);&#xD;&#xA;"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="encode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="&#xD;&#xA;&#x9;&#x9;&#x9;String expr= null;&#xD;&#xA;&#x9;&#x9;&#x9;boolean _isNullOrEmpty = (str == null || str.length() == 0);&#xD;&#xA;&#x9;&#x9;&#x9;if (_isNullOrEmpty) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;expr = &quot;no-name-id&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;else {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;String _string = StandardCharsets.UTF_8.toString();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;try {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;expr = URLEncoder.encode(str, _string);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;catch (UnsupportedEncodingException e) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;// TODO Auto-generated catch block&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;e.printStackTrace();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;return expr;&#xD;&#xA;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eParameters name="str" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uniqueName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        volatile="true" transient="true" defaultValueLiteral="" derived="true" iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentifiableElement" eSuperTypes="#//IIdentifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="File" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Package" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModeEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stmtseq" upperBound="-1"
+        eType="#//StmtCall" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModeSwitch" eSuperTypes="#//StmtCall">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modeentry" upperBound="-1"
+        eType="#//ModeEntry" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

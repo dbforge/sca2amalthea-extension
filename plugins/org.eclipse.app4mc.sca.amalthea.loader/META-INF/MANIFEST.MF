@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Amalthea Loader
+Bundle-SymbolicName: org.eclipse.app4mc.sca.amalthea.loader
+Bundle-Version: 0.9.8.qualifier
+Bundle-Vendor: Eclipse.org
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.sphinx.emf,
+ org.eclipse.app4mc.amalthea.model,
+ org.eclipse.app4mc.sca.logging
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.app4mc.sca.amalthea.loader,
+ org.eclipse.app4mc.sca.amalthea.serializer
+Automatic-Module-Name: org.eclipse.app4mc.sca.amalthea.loader

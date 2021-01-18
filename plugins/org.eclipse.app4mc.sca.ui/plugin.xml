@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+ <extension point="org.eclipse.ui.menus">
+  <menuContribution
+        locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+     <menu
+           icon="icons/scatools_icon.gif"
+           id="SCA Tools"
+           label="SCA Tools">
+        <visibleWhen>
+           <and>
+              <iterate>
+                 <or>
+                    <adapt
+                          type="org.eclipse.core.resources.IProject">
+                    </adapt>
+                 </or>
+              </iterate>
+           </and>
+        </visibleWhen>
+     </menu>
+  </menuContribution>
+</extension>>
+</plugin>

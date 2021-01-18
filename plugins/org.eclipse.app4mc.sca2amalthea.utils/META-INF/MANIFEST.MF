@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SCA2AMALTHEA Utils
+Bundle-SymbolicName: org.eclipse.app4mc.sca2amalthea.utils
+Bundle-Version: 0.9.8.qualifier
+Bundle-Activator: org.eclipse.app4mc.sca2amalthea.utils.Activator
+Bundle-Vendor: Eclipse.org
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.app4mc.sca2amalthea.utils,
+ org.eclipse.app4mc.sca2amalthea.utils.constants
+

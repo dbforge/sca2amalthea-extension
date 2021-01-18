@@ -1,0 +1,5 @@
+# NameOfTheSemaphore,GetLockFunction,ReleaseLockFunction,TypeOfTheSemaphore
+ExampleSimpleLock,getExampleSimpleLock,releaseSimpleLock,
+ExampleCommonLock,getExampleCommonLock,releaseCommonLock,
+ExampleTestLock,getExampleTestLock,releaseExampleTestLock,EXCLUSIVE_LOCK
+ExampleLowPrioLock,getExampleLowPrioLock,releaseExampleLowPrioLock,EXCLUSIVE_LOCK

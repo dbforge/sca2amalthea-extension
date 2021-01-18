@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SCA2AMALTHEA Documentation
+Bundle-SymbolicName: org.eclipse.app4mc.sca2amalthea.docu;singleton:=true
+Bundle-Version: 0.9.8.qualifier
+Bundle-Vendor: Eclipse.org

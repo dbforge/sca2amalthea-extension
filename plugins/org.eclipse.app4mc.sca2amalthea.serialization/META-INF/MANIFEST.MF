@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Serialization
+Bundle-SymbolicName: org.eclipse.app4mc.sca2amalthea.serialization
+Bundle-Version: 0.9.8.qualifier
+Bundle-Vendor: Eclipse.org
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.emf.ecore.xmi;bundle-version="2.10.2"
+Export-Package: org.eclipse.app4mc.sca2amalthea.serialization
+Automatic-Module-Name: org.eclipse.app4mc.sca2amalthea.serialization
